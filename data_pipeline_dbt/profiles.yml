@@ -1,0 +1,13 @@
+data_pipeline_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: myuser
+      password: mypassword
+      port: 5433
+      dbname: department_store
+      schema: staging
+      threads: 4
+      keepalives_idle: 0
