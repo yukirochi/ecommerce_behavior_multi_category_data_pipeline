@@ -10,6 +10,7 @@ sources:
     tables:
       - name: stg_table
         description: "staging e-commerce event logs"
+  
 
 models:
   - name: dim_products
@@ -25,7 +26,6 @@ models:
     description: "all categories"
     columns:
       - name: category_id
-        description: "Primary key for category"
         tests:
           - unique
           - not_null
@@ -34,14 +34,25 @@ models:
     description: "log dates"
     columns:
       - name: date_key
-        description: "Primary key for category"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_users
+    description: "log user"
+    columns:
+      - name: user_id
         tests:
           - unique
           - not_null
 
 
-  # - name: fct_events
-  #   description: "Core fact table containing all e-commerce actions."
+  - name: fct_events
+    description: "Core fact table containing all e-commerce actions."
+    columns:
+      - name: event_key
+        tests:
+          - unique
+          - not_null
+
     
-  # - name: dim_users
-  #   description: "Customer dictionary with lifetime metrics."
