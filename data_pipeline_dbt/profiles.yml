@@ -3,10 +3,10 @@ data_pipeline_dbt:
   outputs:
     dev:
       type: postgres
-      host: localhost
+      host: my-postgres
       user: myuser
       password: mypassword
-      port: 5433
+      port: 5432
       dbname: department_store
       schema: staging
       threads: 4
